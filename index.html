@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,92 +11,283 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100..800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal bg-gray-900 text-white">
-
-    <!-- Contenedor principal -->
-    <div class="container mx-auto letra">
-
-        <!-- Encabezado -->
-        <header class="text-center pt-16 pb-4">
-            <img class="w-24 h-24 mx-auto mb-2 rounded-full" src="./assets/images/logo.jpg" alt="Logo">
-            <h1 class="text-4xl font-bold">Alex Terreros</h1>
-            <p class="mt-4">Apasionado a la computación desde muy joven.</p>
-        </header>
-
-        <!-- Redes Sociales -->
-        <section class="mb-10">
-            <ul class="flex justify-center space-x-4 items-center">
-                <li>
-                    <a href="https://www.linkedin.com/in/alex-terreros-freire-827342120/" target="_blank" class="text-blue-500 hover:text-blue-700">
-                        <img class="w-8 h-8" src="./assets/images/linkedin-svgrepo-com.svg" alt="LinkedIn">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/militem" target="_blank" class="text-gray-700   hover:text-gray-900">
-                        <img class="w-8 h-8" src="./assets/images/github-svgrepo-com.svg" alt="GitHub">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/Xalexx25" target="_blank" class="text-blue-400 hover:text-blue-600">
-                        <img class="w-6 h-6" src="./assets/images/x-logo-white.png" alt="X">
-                    </a>
-                </li>
-                <!-- Agrega otras redes sociales aquí -->
-            </ul>
-            <div class="text-center mt-6">
-                <a href="./assets/my_cv.pdf" target="_blank" download="my_cv.pdf" class="py-2 px-4 bg-green-800 rounded-md">Curriculum</a>
-            </div>
-        </section>
-
-        <!-- Proyectos de Programación -->
-        <section class="text-center">
-            <h2 class="text-2xl font-bold mb-4">Proyectos</h2>
-
-            <!-- Proyecto 1 -->
-            <div class="mb-6">
-                <h3 class="text-lg font-semibold mb-2">HackerDivulgation</h3>
-                <p class="text-gray-300 mb-2">Blog sobre seguridad informática.</p>
-                <p class="text-gray-300 mb-2">Tecnologías utilizadas: Vue3, Firebase.</p>
-                <a href="https://hackerdivulgation.com/" target="_blank" class="text-blue-500 hover:text-blue-400">https://hackerdivulgation.com/</a>
-            </div>
-            <!-- Proyecto 2 -->
-            <div class="mb-6">
-                <h3 class="text-lg font-semibold mb-2">TheFinderAI</h3>
-                <p class="text-gray-300 mb-2">Buscador de AI en internet.</p>
-                <p class="text-gray-300 mb-2">Tecnologías utilizadas: Vue3, Firebase.</p>
-                <a href="https://thefinderai.com/" target="_blank" class="text-blue-500 hover:text-blue-400">https://thefinderai.com/</a>
-            </div>
-
-            <!-- Proyecto 3
-            <div class="mb-6">
-                <h3 class="text-lg font-semibold mb-2">Nombre del Proyecto 3</h3>
-                <p class="text-gray-700 mb-2">Breve descripción del proyecto.</p>
-                <p class="text-gray-700 mb-2">Tecnologías utilizadas: Lista de tecnologías utilizadas en el proyecto.</p>
-                <a href="[Enlace al repositorio en GitHub]" class="text-blue-500 hover:text-blue-700">Enlace al repositorio</a><br>
-                <a href="[Enlace al demo o despliegue del proyecto, si aplicable]" class="text-blue-500 hover:text-blue-700">Enlace al demo/despliegue</a>
-            </div> -->
-        </section>
-
-        <!-- Contacto -->
-        <footer class="text-center my-12">
-            <h2 class="text-2xl font-bold mb-4">Contacto</h2>
-            <p class="text-gray-300 mb-2">
-                <a href="mailto:ale_dario_04@hotmail.es" class="text-blue-500 hover:text-blue-400">ale_dario_04@hotmail.es</a>
-            </p>
-            <p class="text-gray-300 mb-2">© 2024 Alex Terreros. All rights reserved. </p>
-        </footer>
-
-    </div>
+<style>
+    .transition-transform {
+        transition: transform 0.3s ease-in-out;
+    }
     
-    <style>
+    .translate-x-full {
+        transform: translateX(100%);
+    }
+    
+    .translate-x-0 {
+        transform: translateX(0);
+    }
+</style>
 
+<body class="bg-[#10101A] font-sans leading-normal tracking-normal bg-gray-900 text-white">
+    <div class="flex flex-col md:flex-row h-screen">
+        <button class="md:hidden p-4 text-white" id="menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+        </button>
+        <nav id="nav-menu" class="w-full mt-16 md:m-0 z-10 md:w-64 bg-[#0B0B13] text-white flex-shrink-0 shadow-md shadow-blue-500/50 fixed md:static top-0 left-0 h-full md:h-auto md:relative transform md:translate-x-0 transition-transform translate-x-full">
+            <header class="text-center pt-16 pb-4">
+                <img class="w-24 h-24 mx-auto mb-2 rounded-full border-4 border-white" src="./assets/images/logo.jpg" alt="Logo">
+                <h1 class="text-2xl font-bold text-gray-300">Alex Terreros</h1>
+                <p class="mt-4 px-4 text-gray-300">Passionate about computing from a very young age.</p>
+            </header>
+            <section class="mb-10">
+                <ul class="flex justify-center space-x-4 items-center">
+                    <li>
+                        <a href="https://www.linkedin.com/in/alex-terreros-freire-827342120/" target="_blank" class="text-blue-500 hover:text-blue-700">
+                            <img class="w-8 h-8" src="./assets/images/linkedin-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Xalexx25" target="_blank" class="text-blue-400 hover:text-blue-600">
+                            <img class="w-7 h-7" src="./assets/images/orcid-svgrepo-com.svg" alt="ORCID">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/militem" target="_blank" class="text-gray-700   hover:text-gray-900">
+                            <img class="w-8 h-8" src="./assets/images/github-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Xalexx25" target="_blank" class="text-blue-400 hover:text-blue-600">
+                            <img class="w-6 h-6" src="./assets/images/x-logo-white.png" alt="X">
+                        </a>
+                    </li>
+                    <!-- Agrega otras redes sociales aquí -->
+                </ul>
+                <div class="text-center mt-6">
+                    <a href="./assets/my_cv.pdf" target="_blank" download="my_cv.pdf" class="py-2 px-4 bg-green-800 rounded-md">
+                        <span class="italic">My CV</span>
+                    </a>
+                </div>
+            </section>
+            <ul class="mt-8">
+                <li class="text-center">
+                    <a href="#aboutme" class="block text-gray-300 hover:text-gray-400 border-t border-gray-500 py-4 px-4 rounded hover:bg-gray-900 hover:font-bold" onclick="showSection(event, 'aboutme')">About me</a>
+                </li>
+                <li class="text-center">
+                    <a href="#works" class="block text-gray-300 hover:text-gray-400 border-t border-gray-500 py-4 px-4 rounded hover:bg-gray-900 hover:font-bold" onclick="showSection(event, 'works')">Works</a>
+                </li>
+                <li class="text-center">
+                    <a href="#projects" class="block text-gray-300 hover:text-gray-400 border-t border-gray-500 py-4 px-4 rounded hover:bg-gray-900 hover:font-bold" onclick="showSection(event, 'projects')">Projects</a>
+                </li>
+                <li class="text-center">
+                    <a href="#education" class="block text-gray-300 hover:text-gray-400 border-t border-gray-500 py-4 px-4 rounded hover:bg-gray-900 hover:font-bold" onclick="showSection(event, 'education')">Education</a>
+                </li>
+                <li class="text-center">
+                    <a href="#courses" class="block text-gray-300 hover:text-gray-400 border-t border-gray-500 border-b py-4 px-4 rounded hover:bg-gray-900 hover:font-bold" onclick="showSection(event, 'courses')">Courses and Certifications</a>
+                </li>
+            </ul>
+            <div class="text-center mt-4">
+                <h2 class="text-xl text-gray-300">Contact</h2>
+                <p class="text-gray-300">
+                    <a href="mailto:ale_dario_04@hotmail.es" class="text-blue-500 hover:text-blue-400">ale_dario_04@hotmail.es</a>
+                </p>
+                <p class="text-gray-300 mb-2">2024 - Alex Terreros</p>
+            </div>
+        </nav>
+        <main class="flex-1 p-10 overflow-y-auto flex items-center justify-center">
+            <section id="aboutme" class="hidden w-full mb-10 flex flex-col items-center">
+                <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div class="flex justify-center md:justify-end">
+                            <img src="./assets/images/logo.jpg" alt="Profile Picture" class="w-64 h-64 rounded-full border-4 border-[#f5f5f5]">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+                            <p class="text-lg text-custom-medium-gray mb-6">
+                                Hello! I am Alex Terreros, I have worked in research at the university and am a web developer with experience creating dynamic websites.
+                            </p>
+                            <p class="text-lg text-custom-medium-gray mb-6">
+                                I specialize in Python, R, JavaScript and frameworks like VueJS and Tailwind CSS. I'm always eager to learn new technologies and improve my skills.
+                            </p>
+                            <p class="text-lg text-custom-medium-gray">
+                                Let's work together to bring your ideas to life!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="works" class="hidden mb-10 text-black">
+                <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                    <h2 class="text-4xl font-semibold mb-12 text-center text-white">Works</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                        <!-- Project Card 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2">Technical Support</h3>
+                            <p class="text-gray-700">Consejo de Gobierno del Régimen Especial de Galápagos</p>
+                        </div>
+                        <!-- Project Card 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2">Junior Developer</h3>
+                            <p class="text-gray-700">Ine4cElectronics</p>
+                        </div>
+                        <!-- Project Card 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2">Junior Developer</h3>
+                            <p class="text-gray-700">VivaBox</p>
+                        </div>
+                        <!-- Project Card 4 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2">Research Assistant</h3>
+                            <p class="text-gray-700">IDEIAGEOCA Research Group, Salesian Polytechnic University - 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="hidden w-full mb-10 flex flex-col items-center">
+                <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                    <h2 class="text-4xl font-semibold mb-12 text-center">Projects</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                        <!-- Project Card 1 -->
+                        <div class="bg-[#374151] rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105">
+                            <img src="./assets/images/hackerdivulgation.png" alt="Project 1" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">HackerDivulgation</h3>
+                                <p class="text-custom-medium-gray">A brief description of the project goes here. Highlight key features and technologies used.</p>
+                                <div class="pt-4">
+                                    <a href="https://hackerdivulgation.com/" target="_blank" class="px-2 py-1 bg-blue-700 rounded-md">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Card 2 -->
+                        <div class="bg-[#374151] rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105">
+                            <img src="./assets/images/thefinderai.png" alt="Project 2" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">TheFinderAI</h3>
+                                <p class="text-custom-medium-gray">A brief description of the project goes here. Highlight key features and technologies used.</p>
+                                <div class="pt-4">
+                                    <a href="https://thefinderai.com/" target="_blank" class="px-2 py-1 bg-blue-700 rounded-md">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="education" class="hidden mb-10">
+                <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                    <h1 class="text-4xl font-semibold pb-2 mb-8 text-center">Education</h1>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-black">
+                        <h3 class="text-2xl font-bold mb-2">Engineer in Computer Science</h3>
+                        <p class="text-gray-700">Salesian Polytechnic University, Quito - Ecuador</p>
+                    </div>
+                </div>
+            </section>
+            <section id="courses" class="hidden mb-10">
+                <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                    <h1 class="text-4xl font-semibold pb-2 mb-8 text-center">Courses and Certifications</h1>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-black">
+                        <!-- Course/Certification Card 1 -->
+                        <a href="#" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">English Monthly Course</h3>
+                                <p class="text-gray-700">University of Victoria, Canada.</p>
+                                <p class="text-gray-500">October 2024</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 2 -->
+                        <a href="https://cs.lpi.org/caf/Xamman/certification/verify/LPI000590505/q8ss9tdz9z" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Certification LE-1: Linux Essentials</h3>
+                                <p class="text-gray-700">Linux Professional Institute</p>
+                                <p class="text-gray-500">2024</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 1 -->
+                        <a href="#" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Artificial Intelligence and Deep Learning in Python</h3>
+                                <p class="text-gray-700">Udemy</p>
+                                <p class="text-gray-500">2024</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 2 -->
+                        <a href="https://www.udemy.com/certificate/UC-527405df-8c58-45d9-8925-772fb0b320a4/" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Python 3 course</h3>
+                                <p class="text-gray-700">Udemy</p>
+                                <p class="text-gray-500">2024</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 1 -->
+                        <a href="https://www.credly.com/badges/6374704a-ad1a-42cf-bf5c-6c966f3cd362?source=linked_in_profile" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Introduction to the Cybersecurity</h3>
+                                <p class="text-gray-700">Cisco</p>
+                                <p class="text-gray-500">2021</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 2 -->
+                        <a href="https://coursera.org/share/f8898d479c83b90f5e7e856778523503" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Introduction to Python</h3>
+                                <p class="text-gray-700">Coursera</p>
+                                <p class="text-gray-500">2020</p>
+                            </div>
+                        </a>
+                        <!-- Course/Certification Card 2 -->
+                        <a href="https://www.udemy.com/certificate/UC-6df8cedc-4815-4366-b01e-3152f976c305/" target="_blank">
+                            <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-2">Course programming in C++</h3>
+                                <p class="text-gray-700">Udemy</p>
+                                <p class="text-gray-500">2020</p>
+                            </div>
+                        </a>
+                        <!-- Add more course/certification cards as needed -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        function showSection(event, sectionId) {
+            event.preventDefault();
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection(event, 'aboutme');
+        });
+
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            if (navMenu.classList.contains('translate-x-full')) {
+                navMenu.classList.remove('translate-x-full');
+                navMenu.classList.add('translate-x-0');
+            } else {
+                navMenu.classList.remove('translate-x-0');
+                navMenu.classList.add('translate-x-full');
+            }
+        });
+    </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        
         .letra {
-          font-family: "Anek Kannada", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: 400;
-          font-style: normal;
-          font-variation-settings: "wdth" 100;
+            font-family: "Anek Kannada", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
         }
     </style>
 </body>
+
 </html>
